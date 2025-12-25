@@ -1,6 +1,7 @@
-
-
 # U.S. City-Level Living Wage Affordability Analysis
+
+## This project demonstrates practical junior data analyst work by combining multiple public data sources to evaluate affordability at the city level across the United States. The analysis focuses on cleaning and organizing large datasets, applying consistent logic to real-world cost data, and translating results into clear, easy-to-understand insights.
+The goal is to show how structured data can be used to answer real questions about cost of living and affordability, and how data-driven analysis can support better personal and business decisions.
 
 ## Business Problem
 Most living-wage and affordability tools rely on **state or national averages**, which often hide large cost-of-living differences between cities within the same state. This limits their usefulness for individuals, families, employers, and policymakers who need more localized insight.
