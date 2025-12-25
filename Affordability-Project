@@ -1,6 +1,5 @@
 # U.S. City-Level Living Wage Affordability Analysis
-
-## This project demonstrates practical junior data analyst work by combining multiple public data sources to evaluate affordability at the city level across the United States. The analysis focuses on cleaning and organizing large datasets, applying consistent logic to real-world cost data, and translating results into clear, easy-to-understand insights.
+This project demonstrates practical junior data analyst work by combining multiple public data sources to evaluate affordability at the city level across the United States. The analysis focuses on cleaning and organizing large datasets, applying consistent logic to real-world cost data, and translating results into clear, easy-to-understand insights.
 The goal is to show how structured data can be used to answer real questions about cost of living and affordability, and how data-driven analysis can support better personal and business decisions.
 
 ## Business Problem
@@ -126,4 +125,12 @@ Cities are dynamically categorized into four affordability tiers, allowing users
 
 ## Live Visualization
 https://public.tableau.com/app/profile/devin.barton/viz/AffordabilityCalculator/Sheet1?publish=yes
+
+## Role Alignment
+This project reflects the type of work expected in an entry-level data analyst role, including:
+- Working with real, imperfect datasets
+- Cleaning and validating data from multiple sources
+- Applying consistent analytical logic
+- Communicating findings clearly for non-technical audiences
+- Supporting exploratory and decision-oriented analysis
 
