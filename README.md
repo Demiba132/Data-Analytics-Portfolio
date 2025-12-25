@@ -12,7 +12,7 @@ The projects here reflect hands-on, practical analysis similar to what an entry-
 - Interactive Tableau dashboard
 - Tools: Excel, SQL-style modeling logic, Tableau
 
-[View Project →](./living-wage-affordability)
+[View Project →](./Affordability-Project)
 
 ### 2. Sales Performance & Revenue Drivers Analysis
 - Analyzed multi-year sales trends using SQL
