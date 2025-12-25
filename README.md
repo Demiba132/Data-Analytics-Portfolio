@@ -20,4 +20,4 @@ The projects here reflect hands-on, practical analysis similar to what an entry-
 - Business-focused analysis using real transactional data
 - Tools: SQL Server, SQL, Power BI (optional visuals)
 
-[View Project →](./adventureworks-sales-analysis)
+[View Project →](./AdventureWorks2022-Analysis)
