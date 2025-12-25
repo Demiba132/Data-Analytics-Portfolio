@@ -18,6 +18,6 @@ The projects here reflect hands-on, practical analysis similar to what an entry-
 - Analyzed multi-year sales trends using SQL
 - Identified product and regional concentration risks
 - Business-focused analysis using real transactional data
-- Tools: SQL Server, SQL, Power BI (optional visuals)
+- Tools: SQL Server, SQL
 
 [View Project →](./AdventureWorks2022-Analysis)
