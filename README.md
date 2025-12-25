@@ -1,6 +1,6 @@
 # Data Analytics Portfolio
 
-This repository contains selected junior data analysis projects focused on working with real datasets, cleaning and organizing data, running SQL analysis, and translating results into clear, actionable insights.
+This repository contains selected junior data analysis projects focused on working with real datasets, cleaning and organizing data, performing SQL analysis, and translating results into clear, actionable insights.
 
 The projects here reflect hands-on, practical analysis similar to what an entry-level data analyst would do in a real business environment.
 
