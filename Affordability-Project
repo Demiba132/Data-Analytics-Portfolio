@@ -1,14 +1,24 @@
 # U.S. City-Level Living Wage Affordability Analysis
 
--
--
--
+**Dataset:** Custom-built dataset (see *Data Construction* section below) 
+**Author:** Devin Barton  
+**Role Focus:** Junior Data Analyst  
 
 --
 
 ##Overview
 This project demonstrates practical junior data analyst work by combining multiple public data sources to evaluate affordability at the city level across the United States. The analysis focuses on cleaning and organizing large datasets, applying consistent logic to real-world cost data, and translating results into clear, easy-to-understand insights.
+
 The goal is to show how structured data can be used to answer real questions about cost of living and affordability, and how data-driven analysis can support better personal and business decisions.
+
+--
+
+## Data Construction
+This project uses a custom-built dataset created by combining multiple public data sources. Rather than relying on a single pre-packaged dataset, the data was sourced, cleaned, and structured specifically to support city-level affordability analysis.
+
+The final dataset reflects deliberate analytical choices about data granularity, consistency, and availability, and was designed to support comparison and decision-making rather than predictive modeling.
+
+--
 
 ## Business Problem
 Most living-wage and affordability tools rely on **state or national averages**, which often hide large cost-of-living differences between cities within the same state. This limits their usefulness for individuals, families, employers, and policymakers who need more localized insight.
@@ -132,7 +142,7 @@ Cities are dynamically categorized into four affordability tiers, allowing users
 ---
 
 ## Live Visualization
-https://public.tableau.com/app/profile/devin.barton/viz/AffordabilityCalculator/Sheet1?publish=yes
+[View Interactive Tableau Dashboard](https://public.tableau.com/app/profile/devin.barton/viz/AffordabilityCalculator/Sheet1?publish=yes)
 
 ## Role Alignment
 This project reflects the type of work expected in an entry-level data analyst role, including:
