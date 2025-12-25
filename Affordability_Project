@@ -1,0 +1,128 @@
+
+
+# U.S. City-Level Living Wage Affordability Analysis
+
+## Business Problem
+Most living-wage and affordability tools rely on **state or national averages**, which often hide large cost-of-living differences between cities within the same state. This limits their usefulness for individuals, families, employers, and policymakers who need more localized insight.
+
+The goal of this project was to analyze **how affordable different U.S. cities are for different household types**, using a framework that balances realism, transparency, and data availability. Rather than modeling every possible expense, the focus was on building a defensible, explainable approach that supports comparison and decision-making.
+
+The final deliverable is an interactive tool that allows users to compare their household income against estimated living costs at the **city level**, instead of relying on broad averages.
+
+---
+
+## Business Context & Stakeholders
+This analysis is relevant for:
+- Individuals and families evaluating relocation options
+- Employers and HR teams considering geographic pay differences
+- Policymakers and planners assessing affordability patterns
+- Analysts seeking to understand regional cost-of-living tradeoffs
+
+The project prioritizes **clarity, transparency, and explainability**, ensuring that assumptions and limitations are easy to understand and communicate.
+
+---
+
+## Data Sources & Rationale
+Two primary data sources were used, each selected for a specific reason:
+
+### MIT Living Wage Calculator
+- Provides standardized estimates of essential living costs
+- Used at the **state level**, since non-housing expenses (food, healthcare, transportation, childcare, taxes) tend to vary more by state than by individual city
+
+### U.S. Census API
+- Used to retrieve **city-level housing price data**
+- Housing costs were modeled at the city level due to their high variability within states
+
+This hybrid approach reflects a practical analytical tradeoff: using the **most granular data available where it matters most**, while maintaining consistency and reliability for other cost categories.
+
+---
+
+## Analytical Approach
+
+### Housing Cost Modeling
+City-level housing prices were used to estimate monthly housing costs for each city. Housing was intentionally modeled at the city level because it is typically the **largest and most variable household expense**, and often the primary driver of affordability differences within the same state.
+
+---
+
+### Living Wage Construction
+State-level cost structures from the MIT Living Wage Calculator were combined with city-level housing estimates to produce a baseline “living wage” for each city.
+
+Baseline living wages were calculated for **eight household structures**, including:
+- One-adult households with zero to three children
+- Two-adult households with zero to three children
+
+These figures represent **essential living costs only**, not discretionary spending.
+
+---
+
+### Data Preparation & Quality Control
+- Initial raw data supported approximately **14,000 cities**
+- Through restructuring, re-keying, and targeted data cleaning, coverage was expanded to **~20,000 cities**
+- Remaining cities were excluded due to unresolved geocoding or data inconsistencies
+- Excel was used extensively to process, validate, and combine nearly **200,000 individual data points**
+
+Data exclusions were treated as known limitations rather than silently ignored.
+
+---
+
+## Affordability Framework & Assumptions
+The baseline living-wage estimates do **not** include:
+- Savings contributions
+- Debt repayment
+- Retirement funding
+- Discretionary spending (travel, entertainment, etc.)
+
+To translate baseline costs into a more realistic affordability assessment, income was evaluated using **percentage buffers above the calculated living wage**:
+
+- **Less than 10% above baseline**: Unaffordable  
+- **10–20% above baseline**: Somewhat Affordable  
+- **20–30% above baseline**: Affordable  
+- **More than 30% above baseline**: Very Affordable  
+
+These thresholds were chosen to approximate increasing levels of financial flexibility beyond subsistence-level expenses. A 20–30% margin above baseline costs aligns with common household budget allocations for savings, debt servicing, and discretionary spending, while remaining conservative enough to avoid overstating affordability.
+
+---
+
+## Decision Support & Outputs
+The final output is an **interactive Tableau map** designed to support comparison and exploration.
+
+Users can:
+- Enter net household income
+- Select one of eight household structures
+- Instantly view affordability classifications for cities across the U.S.
+
+Cities are dynamically categorized into four affordability tiers, allowing users to quickly identify regions that align with their financial situation. The tool is intended to support **decision-making and exploration**, not to provide prescriptive financial advice.
+
+---
+
+## Tools Used
+- **Excel**
+  - Data collection, restructuring, cleaning, and validation
+  - Formula-driven processing to efficiently manage large datasets
+
+- **Tableau**
+  - Interactive parameters and calculated fields
+  - Geographic visualization focused on usability and clarity
+
+---
+
+## Deliverables
+- Cleaned and structured city-level affordability dataset (~26,000 cities)
+- Interactive Tableau affordability map
+- Static preview images for portfolio documentation
+
+---
+
+## Limitations & Future Enhancements
+- Housing costs are estimated and do not reflect individual mortgage terms or rental markets
+- Local taxes and insurance costs are approximated at the state level
+- Future iterations could incorporate:
+  - Rental market data
+  - Metro-level adjustments
+  - Scenario analysis for interest rates or housing types
+
+---
+
+## Live Visualization
+https://public.tableau.com/app/profile/devin.barton/viz/AffordabilityCalculator/Sheet1?publish=yes
+
