@@ -1,0 +1,156 @@
+# Data Analysis Case Study: Sales Performance & Revenue Drivers
+
+**Dataset:** AdventureWorks2022  
+**Author:** Devin Barton  
+**Role Focus:** Jr Data Analyst  
+
+---
+
+## Overview
+This case study demonstrates end-to-end Business Analysis work using a realistic transactional sales dataset. The objective is to show how an open-ended business question can be broken down into structured analysis, how data supports reasoning, and how insights are communicated clearly to decision-makers.
+
+The focus is on **business understanding and decision support**, with SQL used only as a supporting tool.
+
+---
+
+## Business Question
+How has overall sales revenue changed over time, and what products and regions are driving that performance?
+
+This question reflects a common executive concern around growth, sustainability, and exposure to risk.
+
+---
+
+## Analytical Approach
+The analysis followed a simple, logical progression:
+1. Establish overall revenue trends  
+2. Identify product categories driving revenue  
+3. Assess geographic concentration of sales  
+4. Combine findings to understand risk and implications  
+
+Each step answers a specific question and informs the next.
+
+---
+
+## Revenue Trend Analysis
+
+**Question:**  
+Is the business growing, shrinking, or remaining stable over time?
+
+**Data Used:**  
+`Sales.SalesOrderHeader`
+
+**Query:**
+```sql
+SELECT
+    YEAR(OrderDate) AS OrderYear,
+    SUM(TotalDue) AS TotalRevenue
+FROM Sales.SalesOrderHeader
+GROUP BY YEAR(OrderDate)
+ORDER BY OrderYear;
+
+### Results Returned
+
+| Order Year | Total Revenue |
+|-----------|---------------|
+| 2011 | 14,155,699 |
+| 2012 | 37,675,700 |
+| 2013 | 48,965,888 |
+| 2014 | 22,419,498 |
+
+### Interpretation
+- Revenue increased significantly from 2011 through 2013  
+- Growth was strong but not gradual, indicating rapid expansion  
+- A sharp decline occurred in 2014, signaling a potential disruption or dependency risk  
+
+---
+
+## Revenue by Product Category
+
+### Business Question
+Which products are driving total revenue?
+
+### Query Used
+```sql
+SELECT
+    pc.Name AS ProductCategory,
+    SUM(d.LineTotal) AS TotalRevenue
+FROM Sales.SalesOrderDetail d
+JOIN Production.Product p
+    ON d.ProductID = p.ProductID
+JOIN Production.ProductSubcategory ps
+    ON p.ProductSubcategoryID = ps.ProductSubcategoryID
+JOIN Production.ProductCategory pc
+    ON ps.ProductCategoryID = pc.ProductCategoryID
+GROUP BY pc.Name
+ORDER BY TotalRevenue DESC;
+
+### Results Returned
+
+| Product Category | Total Revenue |
+|-----------------|---------------|
+| Bikes | 94,651,173 |
+| Components | 11,802,593 |
+| Clothing | 2,120,543 |
+| Accessories | 1,272,073 |
+
+### Interpretation
+- Bike sales overwhelmingly dominate total revenue  
+- Other product categories contribute relatively small shares  
+- Overall business performance is highly dependent on a single product category  
+
+---
+
+## Revenue by Region
+
+### Business Question
+Is revenue evenly distributed geographically, or concentrated in specific regions?
+
+### Query Used
+```sql
+SELECT
+    t.Name AS Territory,
+    SUM(h.TotalDue) AS TotalRevenue
+FROM Sales.SalesOrderHeader h
+JOIN Sales.SalesTerritory t
+    ON h.TerritoryID = t.TerritoryID
+GROUP BY t.Name
+ORDER BY TotalRevenue DESC;
+
+### Results Returned
+
+| Territory | Total Revenue |
+|----------|---------------|
+| Southwest | 27,150,595 |
+| Canada | 18,398,929 |
+| Northwest | 18,061,660 |
+| Australia | 11,814,376 |
+| Central | 8,913,299 |
+| Southeast | 8,884,099 |
+| United Kingdom | 8,574,049 |
+| France | 8,119,749 |
+| Northeast | 7,820,210 |
+| Germany | 5,479,820 |
+
+### Interpretation
+- Revenue is concentrated in a small number of regions  
+- Southwest, Canada, and Northwest are the strongest contributors  
+- Several regions significantly underperform relative to top markets  
+
+---
+
+## Combined Business Insight
+Overall revenue performance is driven primarily by **bike sales concentrated in a limited number of regions**. Strong growth between 2011 and 2013 likely reflects strong performance in these core markets. The sharp decline in 2014 suggests that weakness in bike demand or disruptions in key regions can significantly impact total revenue.
+
+---
+
+## Conclusions & Business Implications
+
+### Key Conclusions
+- The business is highly dependent on a single product category (bikes)  
+- Revenue is geographically concentrated, increasing exposure to regional downturns  
+- While growth has been strong historically, the lack of diversification presents risk  
+
+### Business Implications
+- A downturn in key regions or reduced bike demand can disproportionately affect total performance  
+- Revenue diversification could reduce volatility and improve long-term resilience  
+
