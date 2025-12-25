@@ -2,7 +2,7 @@
 
 **Dataset:** AdventureWorks2022  
 **Author:** Devin Barton  
-**Role Focus:** Jr Data Analyst  
+**Role Focus:** Junior Data Analyst  
 
 ---
 
@@ -154,3 +154,7 @@ Overall revenue performance is driven primarily by **bike sales concentrated in 
 - A downturn in key regions or reduced bike demand can disproportionately affect total performance  
 - Revenue diversification could reduce volatility and improve long-term resilience  
 
+## Tools Used
+- SQL Server (AdventureWorks2022)
+- SQL (aggregation, joins, grouping)
+- Excel (light validation)
